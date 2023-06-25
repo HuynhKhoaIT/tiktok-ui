@@ -1,0 +1,8 @@
+1. cài đặt và cấu hình Prettier
+  - Tạo file .prettierrc
+  - Tạo file .vscode/settings.json
+2. cấu hình sử dụng CSS/SAS
+  -Tạo GlobalStyles component
+  -Cài thư viện SASS: npm i -D sass
+  -Reset CSS (npm install --save normalize.css)
+  -Default CSS: font-family, font-size, line-height
