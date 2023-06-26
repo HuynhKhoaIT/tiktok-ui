@@ -6,3 +6,8 @@
   -Cài thư viện SASS: npm i -D sass
   -Reset CSS (npm install --save normalize.css)
   -Default CSS: font-family, font-size, line-height
+3. Cấu hình router và xây dựng cơ chế tải layout
+  -Phân tích tổng quan Layout
+  -Cài đặt react-router-dom: npm i react-router-dom  
+  -Đưa cấu hình routes ra ngoài
+  -Xây dựng cơ chế tải Layout
