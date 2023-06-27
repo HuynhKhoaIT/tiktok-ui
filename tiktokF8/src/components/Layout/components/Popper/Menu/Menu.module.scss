@@ -1,0 +1,21 @@
+// Menu wrapper
+.menu-list {
+    margin-top: 8px;
+    min-width: 234px;
+    margin-right: 8px;
+    .menu-item {
+        text-align: left;
+        margin-left: 0px;
+        padding: 11px 18px;
+    }
+}
+.menu-wrapper {
+    padding-bottom: 8px;
+}
+
+.menu-item {
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+    }
+}
+// Menu item

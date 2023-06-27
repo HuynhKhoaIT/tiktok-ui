@@ -1,7 +1,16 @@
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
 import { useEffect, useState } from 'react';
-import { faCircleXmark, faSpinner, faMagnifyingGlass, faPlus } from '@fortawesome/free-solid-svg-icons';
+import {
+    faCircleXmark,
+    faSpinner,
+    faMagnifyingGlass,
+    faPlus,
+    faEllipsisVertical,
+    faEarthAsia,
+    faQuestion,
+    faKeyboard,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from './Header.module.scss';
@@ -9,9 +18,25 @@ import images from '../../../../assets/images';
 import { wrapper as PopperWapper } from '../Popper';
 import AccountItem from '../../../AccountItem';
 import Button from '../../../Button';
+import Menu from '../Popper/Menu';
 
 const cx = classNames.bind(styles);
 
+const MENU_ITEMS = [
+    {
+        icon: <FontAwesomeIcon icon={faEarthAsia} />,
+        title: 'Tiếng Việt',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faQuestion} />,
+        title: 'Phản hồi và trợ giúp',
+        to: '/feedback',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        title: 'Phím tắt trên bàn phím',
+    },
+];
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
 
@@ -57,6 +82,11 @@ function Header() {
                     <Button primary className={cx('custom')}>
                         Log In
                     </Button>
+                    <Menu items={MENU_ITEMS}>
+                        <button className={cx('more-btn')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                        </button>
+                    </Menu>
                 </div>
             </div>
         </header>
