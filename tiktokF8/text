@@ -11,3 +11,11 @@
   -Cài đặt react-router-dom: npm i react-router-dom  
   -Đưa cấu hình routes ra ngoài
   -Xây dựng cơ chế tải Layout
+
+4. Cài thư viện fontawesome
+(npm install @fortawesome/fontawesome-svg-core@latest @fortawesome/free-brands-svg-icons@latest @fortawesome/
+free-regular-svg-icons@latest @fortawesome/free-solid-svg-icons@latest @fortawesome/react-fontawesome@latest)
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+5. Cài# npm
+npm i @tippyjs/react
