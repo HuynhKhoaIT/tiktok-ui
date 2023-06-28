@@ -3,10 +3,32 @@ import Tippy from '@tippyjs/react/headless';
 import { wrapper as PopperWapper } from '../../Popper';
 import styles from './Menu.module.scss';
 import MenuItem from './MenuItem';
+import Header from './header';
+import { useState } from 'react';
 const cx = classNames.bind(styles);
-function Menu({ children, items = [] }) {
+
+const defaultFun = () => {};
+function Menu({ children, items = [], onChange = defaultFun }) {
+    const [history, setHistory] = useState([{ data: items }]);
+    const current = history[history.length - 1];
     const renderitem = () => {
-        return items.map((item, index) => <MenuItem key={index} data={item} />);
+        return current.data.map((item, index) => {
+            const isParent = !!item.children;
+
+            return (
+                <MenuItem
+                    key={index}
+                    data={item}
+                    onClick={() => {
+                        if (isParent) {
+                            setHistory((prev) => [...prev, item.children]);
+                        } else {
+                            onChange(item);
+                        }
+                    }}
+                />
+            );
+        });
     };
     return (
         <Tippy
@@ -14,9 +36,22 @@ function Menu({ children, items = [] }) {
             interactive
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
-                    <PopperWapper className={cx('menu-wrapper')}>{renderitem()}</PopperWapper>
+                    <PopperWapper className={cx('menu-wrapper')}>
+                        {history.length > 1 && (
+                            <Header
+                                title={current.title}
+                                onBack={() => {
+                                    setHistory((prev) => prev.slice(0, prev.length - 1));
+                                }}
+                            />
+                        )}
+                        {renderitem()}
+                    </PopperWapper>
                 </div>
             )}
+            onHide={() => {
+                setHistory((prev) => prev.slice(0, 1));
+            }}
         >
             {children}
         </Tippy>

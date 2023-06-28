@@ -1,5 +1,5 @@
 .wrapper {
-    --search-height: 46px;
+    --search-height: 40px;
     --search-border-radius: 92px;
     --search-button-width: 52px;
     width: 100%;
@@ -13,6 +13,11 @@
     height: 100%;
     width: 100%;
     padding: 0 24px 0 16px;
+}
+
+.inner .logo {
+    width: 300px;
+    height: 36px;
 }
 
 .search {
@@ -105,4 +110,5 @@
     margin-left: 16px;
     padding: 4px 8px;
     background-color: var(--white-color);
+    cursor: pointer;
 }
