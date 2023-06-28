@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import Tippy from '@tippyjs/react/headless';
+import HeadlessTippy from '@tippyjs/react/headless';
 import { wrapper as PopperWapper } from '../../Popper';
 import styles from './Menu.module.scss';
 import MenuItem from './MenuItem';
@@ -31,7 +31,7 @@ function Menu({ children, items = [], onChange = defaultFun }) {
         });
     };
     return (
-        <Tippy
+        <HeadlessTippy
             delay={[0, 700]}
             interactive
             render={(attrs) => (
@@ -54,7 +54,7 @@ function Menu({ children, items = [], onChange = defaultFun }) {
             }}
         >
             {children}
-        </Tippy>
+        </HeadlessTippy>
     );
 }
 

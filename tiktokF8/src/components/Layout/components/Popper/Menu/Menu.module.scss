@@ -4,10 +4,15 @@
     min-width: 200px;
     margin-right: 8px;
     line-height: 1.8rem;
-    .menu-item {
+    & .menu-item {
         text-align: left;
         margin-left: 0px;
         padding: 8px 18px;
+        border-radius: 0px;
+    }
+
+    & .separate {
+        border-top: 1px solid rgba(22, 24, 35, 0.12);
     }
 }
 .menu-wrapper {

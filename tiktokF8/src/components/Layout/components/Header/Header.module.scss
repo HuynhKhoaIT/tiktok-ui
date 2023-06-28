@@ -104,6 +104,25 @@
     width: 500px;
 }
 
+// action
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.user-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    margin-left: 24px;
+    cursor: pointer;
+}
+.action-btn {
+    background-color: transparent;
+    margin-left: 16px;
+    cursor: pointer;
+}
+
 // menu button
 .more-btn {
     height: 20px;
