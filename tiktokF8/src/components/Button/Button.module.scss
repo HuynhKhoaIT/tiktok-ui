@@ -1,9 +1,10 @@
 .wrapper {
+    font-family: 'IBM Plex Sans', 'TikTokFont', Arial, Helvetica, sans-serif;
     font-size: 1.6rem;
     font-weight: 700;
     min-width: 100px;
     border-radius: 4px;
-    padding: 8px 16px;
+    padding: 6px 10px;
     background-color: var(--white-color);
     border: 1px solid transparent;
     cursor: pointer;
@@ -73,8 +74,13 @@
 
 // icon
 .icon-left {
+    display: inline-block;
     margin-right: 8px;
+    width: 24px;
 }
 .icon-right {
+    display: inline-block;
+
     margin-left: 8px;
+    width: 24px;
 }
