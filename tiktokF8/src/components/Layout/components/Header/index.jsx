@@ -15,8 +15,6 @@ import {
     faGear,
     faStore,
     faArrowRightFromBracket,
-    faPaperPlane,
-    faMessage,
     faUser,
     faHeart,
 } from '@fortawesome/free-solid-svg-icons';
@@ -28,7 +26,8 @@ import { wrapper as PopperWapper } from '../Popper';
 import AccountItem from '../../../AccountItem';
 import Button from '../../../Button';
 import Menu from '../Popper/Menu';
-
+import { BoxIcon, MessageIcon } from '../../../Icons';
+import Image from '../../../Images';
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
@@ -156,12 +155,12 @@ function Header() {
                             </Button>
                             <Tippy content="Tin nhắn" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faPaperPlane} />
+                                    <MessageIcon className={cx('message-icon')} />
                                 </button>
                             </Tippy>
                             <Tippy content="Hộp thư" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faMessage} />
+                                    <BoxIcon className={cx('box-icon')} />
                                 </button>
                             </Tippy>
                         </>
@@ -177,10 +176,11 @@ function Header() {
                     )}
                     <Menu items={currenUsser ? userMenut : MENU_ITEMS} onChange={handleMenuOnchange}>
                         {currenUsser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
-                                src="https://pbs.twimg.com/media/FoUoGo3XsAMEPFr?format=jpg&name=4096x4096"
+                                src="https://pbs.twimg.com/media/FoUoGo3XsAMEPFr?format=jpg&name=4096x40a96"
                                 alt="khoa"
+                                fallback="https://pbs.twimg.com/media/FoUoGo3XsAMEPFr?format=jpg&name=4096x4096"
                             />
                         ) : (
                             <button className={cx('more-btn')}>

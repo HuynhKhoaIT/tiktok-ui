@@ -25,6 +25,7 @@ html {
 }
 
 body {
+    font-family: 'IBM Plex Sans', 'TikTokFont', Arial, Helvetica, sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
@@ -42,8 +43,23 @@ a {
     color: var(--text-color);
     text-decoration: none;
 }
-
-// tippy
+// fonts
+@font-face {
+    font-family: TikTokFont;
+    src: url('/src/assets/fonts/TikTokFont-Regular.woff2');
+    font-weight: 400;
+}
+@font-face {
+    font-family: TikTokFont;
+    src: url('/src/assets/fonts/TikTokFont-Semibold.woff2');
+    font-weight: 600;
+}
+@font-face {
+    font-family: TikTokFont;
+    src: url('/src/assets/fonts/TikTokDisplayFont-Bold.woff2');
+    font-weight: 700;
+}
+// Custom tippy
 body .tippy-box {
     background-color: rgba(84, 84, 84, 0.92);
     font-size: 1.6rem;
