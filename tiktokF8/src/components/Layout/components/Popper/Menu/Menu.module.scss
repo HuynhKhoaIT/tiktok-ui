@@ -20,6 +20,12 @@
     padding-bottom: 8px;
 }
 
+.menu-body {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
 .menu-item {
     &:hover {
         background: rgba(22, 24, 35, 0.03);
@@ -30,10 +36,10 @@
 // Header menu
 .header {
     margin-top: -8px;
-
     position: relative;
     height: 40px;
     width: 100%;
+    flex-shrink: 0;
 }
 .back-btn {
     width: 50px;
