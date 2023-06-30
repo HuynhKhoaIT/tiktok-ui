@@ -7,6 +7,7 @@
     --white-color: #fff;
     --black: #000;
     --text-color: #161823;
+    --font-family: 'IBM Plex Sans', 'TikTokFont', Arial, Helvetica, sans-serif;
 }
 
 img {
@@ -25,8 +26,8 @@ html {
 }
 
 body {
-    font-family: 'IBM Plex Sans', 'TikTokFont', Arial, Helvetica, sans-serif;
-    font-size: 1.6rem;
+    font-family: var(--font-family);
+    font-size: 1.4rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
     color: var(--text-color);
@@ -62,7 +63,7 @@ a {
 // Custom tippy
 body .tippy-box {
     background-color: rgba(84, 84, 84, 0.92);
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     border-radius: 8px;
     line-height: 2.1rem;
     & .tippy-content {

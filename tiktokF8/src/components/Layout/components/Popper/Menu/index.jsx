@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import classNames from 'classnames/bind';
 import HeadlessTippy from '@tippyjs/react/headless';
 import { wrapper as PopperWapper } from '../../Popper';
@@ -8,7 +9,7 @@ import { useState } from 'react';
 const cx = classNames.bind(styles);
 
 const defaultFun = () => {};
-function Menu({ children, items = [], onChange = defaultFun }) {
+function Menu({ children, items = [], hideOnClick = false, onChange = defaultFun }) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
     const renderitem = () => {
@@ -52,6 +53,7 @@ function Menu({ children, items = [], onChange = defaultFun }) {
             onHide={() => {
                 setHistory((prev) => prev.slice(0, 1));
             }}
+            hideOnClick={hideOnClick}
         >
             {children}
         </HeadlessTippy>

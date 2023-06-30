@@ -42,6 +42,13 @@ function Search() {
         inputRef.current.focus();
         setSearchResult([]);
     };
+    const handleOnchange = (e) => {
+        const searchValue = e.target.value;
+        if (!searchValue.startsWith(' ')) {
+            setSearchValue(e.target.value);
+        }
+    };
+
     return (
         <HeadlessTippy
             interactive
@@ -64,7 +71,7 @@ function Search() {
                     value={searchValue}
                     placeholder="Tìm kiếm"
                     spellCheck={false}
-                    onChange={(e) => setSearchValue(e.target.value)}
+                    onChange={handleOnchange}
                     onFocus={() => setShowResult(true)}
                 />
                 {!!searchValue && !loading && (
@@ -78,7 +85,12 @@ function Search() {
                     </button>
                 )}
 
-                <button className={cx('search-btn')}>
+                <button
+                    className={cx('search-btn')}
+                    onMouseDown={(e) => {
+                        e.preventDefault();
+                    }}
+                >
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </button>
             </div>
