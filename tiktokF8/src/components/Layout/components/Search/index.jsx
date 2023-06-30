@@ -9,32 +9,33 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './Search.module.scss';
 import { wrapper as PopperWapper } from '../Popper';
 import AccountItem from '../../../AccountItem';
+import useDebounce from '../../../../hooks/useDebounce';
+import * as searchSrvices from '../../../../apiServices/searchServices';
 const cx = classNames.bind(styles);
 function Search() {
     const [searchResult, setSearchResult] = useState([]);
     const [searchValue, setSearchValue] = useState('');
     const [showResult, setShowResult] = useState(true);
     const [loading, setLoading] = useState(false);
+    const debounce = useDebounce(searchValue, 500);
+
     const inputRef = useRef();
     useEffect(() => {
-        if (!searchValue.trim()) {
+        if (!debounce.trim()) {
             setSearchResult([]);
             return;
         }
         setLoading(true);
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchValue)}&type=less`)
-            .then((response) => response.json())
-            .then((data) => {
-                // Xử lý dữ liệu nhận được
-                setSearchResult(data.data);
-                setLoading(false);
-            })
-            .catch((error) => {
-                // Xử lý lỗi nếu có
-                console.error(error);
-                setLoading(false);
-            });
-    }, [searchValue]);
+
+        const fetchApt = async () => {
+            setLoading(true);
+            const result = await searchSrvices.search(debounce);
+            setSearchResult(result);
+            setLoading(false);
+        };
+
+        fetchApt();
+    }, [debounce]);
 
     const handleClear = () => {
         setSearchValue('');
