@@ -32,28 +32,28 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFun
             );
         });
     };
+
+    const handleBack = () => {
+        setHistory((prev) => prev.slice(0, prev.length - 1));
+    };
+    const renderResult = (attrs) => (
+        <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
+            <PopperWapper className={cx('menu-wrapper')}>
+                {history.length > 1 && <Header title={current.title} onBack={handleBack} />}
+                <div className={cx('menu-body')}>{renderitem()}</div>
+            </PopperWapper>
+        </div>
+    );
+    // reset to first page
+    const handleResetMenu = () => {
+        setHistory((prev) => prev.slice(0, 1));
+    };
     return (
         <HeadlessTippy
             delay={[0, 700]}
             interactive
-            render={(attrs) => (
-                <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
-                    <PopperWapper className={cx('menu-wrapper')}>
-                        {history.length > 1 && (
-                            <Header
-                                title={current.title}
-                                onBack={() => {
-                                    setHistory((prev) => prev.slice(0, prev.length - 1));
-                                }}
-                            />
-                        )}
-                        <div className={cx('menu-body')}>{renderitem()}</div>
-                    </PopperWapper>
-                </div>
-            )}
-            onHide={() => {
-                setHistory((prev) => prev.slice(0, 1));
-            }}
+            render={renderResult}
+            onHide={handleResetMenu}
             hideOnClick={hideOnClick}
         >
             {children}
