@@ -1,0 +1,56 @@
+.wrapper {
+    font-family: 'TikTokFont';
+    border-top: 1px solid rgba(22, 24, 35, 0.12);
+}
+
+.label {
+    padding: 0 8px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 18px;
+    letter-spacing: 0.093px;
+    color: rgba(22, 24, 35, 0.75);
+}
+
+// account item
+.account-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+}
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.item-info {
+    flex: 1;
+    margin-left: 12px;
+}
+.nickname {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1;
+}
+.check-icon {
+    color: rgb(32, 213, 236);
+    margin-left: 8px;
+    font-size: 1.2rem;
+}
+.name {
+    font-size: 1.2rem;
+    line-height: 1;
+    color: rgba(22, 24, 35, 0.75);
+}
+.more-btn {
+    color: var(--primary);
+    padding: 0 8px;
+    margin-top: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+}
