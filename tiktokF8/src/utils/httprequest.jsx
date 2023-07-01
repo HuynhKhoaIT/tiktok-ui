@@ -1,5 +1,4 @@
 import axios from 'axios';
-console.log(import.meta.env.REACT_APP_BASE_URL);
 const httprequest = axios.create({
     baseURL: import.meta.env.VITE_REACT_APP_BASE_URL,
 });

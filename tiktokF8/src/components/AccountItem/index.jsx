@@ -1,9 +1,12 @@
+/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types'; // ES6
 import classNames from 'classnames/bind';
 import styles from './AccountItem.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import Image from '../Images';
+
 const cx = classNames.bind(styles);
 function AccountItem({ data }) {
     return (
@@ -20,4 +23,7 @@ function AccountItem({ data }) {
     );
 }
 
+AccountItem.propTypes = {
+    data: PropTypes.object.isRequired,
+};
 export default AccountItem;
