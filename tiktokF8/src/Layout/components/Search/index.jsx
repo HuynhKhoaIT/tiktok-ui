@@ -8,9 +8,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from './Search.module.scss';
 import { wrapper as PopperWapper } from '../Popper';
-import AccountItem from '../../../AccountItem';
-import useDebounce from '../../../../hooks/useDebounce';
-import * as searchSrvices from '../../../../apiServices/searchServices';
+import AccountItem from '../../../components/AccountItem';
+import useDebounce from '../../../components/../hooks/useDebounce';
+import * as searchSrvices from '../../../services/searchService';
 const cx = classNames.bind(styles);
 function Search() {
     const [searchResult, setSearchResult] = useState([]);
