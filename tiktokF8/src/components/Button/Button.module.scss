@@ -1,5 +1,5 @@
 .wrapper {
-    font-family: 'IBM Plex Sans', 'TikTokFont', Arial, Helvetica, sans-serif;
+    font-family: var(--font-family);
     font-size: 1.6rem;
     font-weight: 700;
     min-width: 100px;
@@ -20,6 +20,7 @@
 }
 // button types
 .rounded {
+    text-align: center;
     font-size: 1.4rem;
     min-width: 90px;
     padding: 6px 16px;
@@ -33,6 +34,7 @@
 }
 
 .primary {
+    text-align: center;
     color: var(--white-color);
     background-color: var(--primary);
     border-color: var(--primary);
@@ -43,6 +45,7 @@
 }
 
 .outline {
+    text-align: center;
     color: var(--primary);
     border-color: currentColor;
     &:hover {

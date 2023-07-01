@@ -1,0 +1,38 @@
+.menu-item {
+    display: flex;
+    padding: 8px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 4px;
+    &.active {
+        color: var(--primary);
+        .icon {
+            display: none;
+        }
+        .active-icon {
+            display: flex;
+        }
+    }
+
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+    }
+}
+
+.title {
+    font-family: 'TikTokFont';
+
+    margin-left: 8px;
+}
+
+.menu-icon {
+}
+
+.icon {
+    display: flex;
+}
+.active-icon {
+    display: none;
+}
