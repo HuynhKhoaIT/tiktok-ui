@@ -15,7 +15,7 @@ export const MessageIcon = ({ width = '2.2rem', height = '2.2rem', className }) 
         ></path>
     </svg>
 );
-export const BoxIcon = ({ width = '2.8rem', height = '2.8rem', className }) => (
+export const BoxIcon = ({ width = '3.2rem', height = '3.2rem', className }) => (
     <svg
         className={className}
         width={width}
@@ -32,7 +32,7 @@ export const BoxIcon = ({ width = '2.8rem', height = '2.8rem', className }) => (
         ></path>
     </svg>
 );
-export const HomeIcon = ({ width = '2.8rem', height = '2.8rem', className }) => (
+export const HomeIcon = ({ width = '3.2rem', height = '3.2rem', className }) => (
     <svg
         className={className}
         width={width}
@@ -50,7 +50,7 @@ export const HomeIcon = ({ width = '2.8rem', height = '2.8rem', className }) => 
     </svg>
 );
 
-export const HomeActiveIcon = ({ width = '2.8rem', height = '2.8rem', className }) => (
+export const HomeActiveIcon = ({ width = '3.2rem', height = '3.2rem', className }) => (
     <svg
         className={className}
         width={width}
@@ -67,7 +67,7 @@ export const HomeActiveIcon = ({ width = '2.8rem', height = '2.8rem', className 
         ></path>
     </svg>
 );
-export const FollowingIcon = ({ width = '2.8rem', height = '2.8rem', className }) => (
+export const FollowingIcon = ({ width = '3.2rem', height = '3.2rem', className }) => (
     <svg
         className={className}
         width={width}
@@ -95,7 +95,7 @@ export const FollowingIcon = ({ width = '2.8rem', height = '2.8rem', className }
     </svg>
 );
 
-export const FollowingActiveIcon = ({ width = '2.8rem', height = '2.8rem', className }) => (
+export const FollowingActiveIcon = ({ width = '3.2rem', height = '3.2rem', className }) => (
     <svg
         className={className}
         width={width}
@@ -111,7 +111,7 @@ export const FollowingActiveIcon = ({ width = '2.8rem', height = '2.8rem', class
         <path d="M33 26.5C36.0376 26.5 38.5 24.0376 38.5 21C38.5 17.9624 36.0376 15.5 33 15.5C29.9624 15.5 27.5 17.9624 27.5 21C27.5 24.0376 29.9624 26.5 33 26.5Z"></path>
     </svg>
 );
-export const ExploreIcon = ({ width = '2.8rem', height = '2.8rem', className }) => (
+export const ExploreIcon = ({ width = '3.2rem', height = '3.2rem', className }) => (
     <svg
         className={className}
         fill="currentColor"
@@ -133,7 +133,7 @@ export const ExploreIcon = ({ width = '2.8rem', height = '2.8rem', className }) 
     </svg>
 );
 
-export const ExploreActiveIcon = ({ width = '2.8rem', height = '2.8rem', className }) => (
+export const ExploreActiveIcon = ({ width = '3.2rem', height = '3.2rem', className }) => (
     <svg
         className={className}
         fill="currentColor"
@@ -150,7 +150,7 @@ export const ExploreActiveIcon = ({ width = '2.8rem', height = '2.8rem', classNa
         <path d="m21.92 26.89 3.4-2.05.76-3.9-3.4 2.06-.76 3.89Z"></path>
     </svg>
 );
-export const LiveIcon = ({ width = '2.8rem', height = '2.8rem', className }) => (
+export const LiveIcon = ({ width = '3.2rem', height = '3.2rem', className }) => (
     <svg
         className={className}
         width={width}
@@ -168,7 +168,7 @@ export const LiveIcon = ({ width = '2.8rem', height = '2.8rem', className }) => 
         <path d="M15 15.134C15.6667 15.5189 15.6667 16.4811 15 16.866L12 18.5981C11.3333 18.983 10.5 18.5019 10.5 17.7321L10.5 14.2679C10.5 13.4981 11.3333 13.017 12 13.4019L15 15.134Z"></path>
     </svg>
 );
-export const LiveActiveIcon = ({ width = '2.8rem', height = '2.8rem', className }) => (
+export const LiveActiveIcon = ({ width = '3.2rem', height = '3.2rem', className }) => (
     <svg
         className={className}
         width={width}

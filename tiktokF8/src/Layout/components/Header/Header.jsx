@@ -29,7 +29,7 @@ const cx = classNames.bind(styles);
 const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
-        title: 'Tiếng Việt',
+        title: 'English',
         children: {
             title: 'Language',
             data: [
@@ -53,12 +53,12 @@ const MENU_ITEMS = [
     },
     {
         icon: <FontAwesomeIcon icon={faQuestion} />,
-        title: 'Phản hồi và trợ giúp',
+        title: 'Feedback and help',
         to: '/feedback',
     },
     {
         icon: <FontAwesomeIcon icon={faKeyboard} />,
-        title: 'Phím tắt trên bàn phím',
+        title: 'Keyboard shortcuts',
     },
 ];
 
@@ -77,28 +77,28 @@ function Header() {
     const userMenut = [
         {
             icon: <FontAwesomeIcon icon={faUser} />,
-            title: 'Xem hồ sơ',
+            title: 'View profile',
             to: '@khoa',
         },
         {
             icon: <FontAwesomeIcon icon={faHeart} />,
-            title: 'Yêu thích',
+            title: 'Favorites',
             to: '@khoa',
         },
         {
             icon: <FontAwesomeIcon icon={faStore} />,
-            title: 'Bộ công cụ dành cho doanh nghiệp',
+            title: 'Business Suite',
             to: '/business-suite',
         },
         {
             icon: <FontAwesomeIcon icon={faGear} />,
-            title: 'Cài đặt',
+            title: 'Setting',
             to: '/setting',
         },
         ...MENU_ITEMS,
         {
             icon: <FontAwesomeIcon icon={faArrowRightFromBracket} />,
-            title: 'Đăng xuất',
+            title: 'Log out',
             to: '/logout',
             separate: true,
         },

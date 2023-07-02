@@ -71,7 +71,7 @@ function Search() {
                     <input
                         ref={inputRef}
                         value={searchValue}
-                        placeholder="Tìm kiếm"
+                        placeholder="Search"
                         spellCheck={false}
                         onChange={handleOnchange}
                         onFocus={() => setShowResult(true)}
