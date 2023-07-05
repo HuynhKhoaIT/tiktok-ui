@@ -20,6 +20,9 @@
     align-items: center;
     padding: 8px;
     cursor: pointer;
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
 }
 .avatar {
     width: 32px;

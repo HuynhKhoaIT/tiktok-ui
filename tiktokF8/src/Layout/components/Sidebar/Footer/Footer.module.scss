@@ -1,0 +1,27 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 16px 0 0 8px;
+}
+.links-1,
+.links-2,
+.links-3 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+    & a {
+        font-family: 'TiktokFont';
+        font-size: 1.2rem;
+        font-weight: 600;
+        line-height: 16px;
+        margin-top: 5px;
+        color: rgba(22, 24, 35, 0.5);
+        margin-right: 6px;
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+}

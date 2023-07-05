@@ -12,10 +12,14 @@ import {
     ExploreActiveIcon,
     LiveActiveIcon,
 } from '../../../components/Icons';
-
+import SuggestedAccounts from '../../../components/SuggestedAccounts';
+import LogginAccout from '../../../components/LogginAccout';
+import Footer from './Footer';
 const cx = classNames.bind(styles);
 
 function Sidebar() {
+    const currentUser = false;
+
     return (
         <aside className={cx('wrapper')}>
             <Menu>
@@ -44,6 +48,14 @@ function Sidebar() {
                     activeIcon={<LiveActiveIcon />}
                 />
             </Menu>
+
+            {!currentUser && <LogginAccout />}
+
+            {!currentUser && <SuggestedAccounts label="Suggested accounts" />}
+
+            {currentUser && <SuggestedAccounts label="Following accounts" />}
+
+            <Footer />
         </aside>
     );
 }

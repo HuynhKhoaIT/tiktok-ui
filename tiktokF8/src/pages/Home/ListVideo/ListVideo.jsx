@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
-function Menu({ children }) {
+function ListVideo({ children }) {
     return (
         <>
             <nav>{children}</nav>
         </>
     );
 }
-Menu.propTypes = {
+ListVideo.propTypes = {
     children: PropTypes.node.isRequired,
 };
-export default Menu;
+export default ListVideo;
