@@ -12,7 +12,7 @@
     flex-wrap: wrap;
     margin-bottom: 8px;
     & a {
-        font-family: 'TiktokFont';
+        font-family: var(--font-family-tiktok);
         font-size: 1.2rem;
         font-weight: 600;
         line-height: 16px;

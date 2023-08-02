@@ -1,0 +1,121 @@
+.wrapper {
+    font-family: var(--font-family-tiktok);
+    max-width: 1776px;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    height: 2000px;
+    overflow-y: auto;
+    margin: 0 auto;
+}
+.profile {
+    padding: 32px 24px 36px;
+}
+.profile__header {
+    max-width: 624px;
+    padding-right: 92px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.profile__header-info {
+    display: flex;
+    align-items: center;
+}
+.avatar {
+    width: 116px;
+    height: 116px;
+    border-radius: 50%;
+}
+.info-title {
+    margin-left: 20px;
+}
+.nickname {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 38px;
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.username {
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 24px;
+    letter-spacing: -0.028px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 25px;
+    max-width: 450px;
+    margin-bottom: 16px;
+}
+.btn-follow {
+    min-width: 208px;
+    padding: 8px 0;
+    font-size: 1.8rem;
+}
+.profile__header-countInfos {
+    display: flex;
+    margin-top: 22px;
+}
+.countInfos-number {
+    margin-right: 20px;
+    & strong {
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    & span {
+        font-size: 1.6rem;
+        color: rgba(22, 24, 35, 0.75);
+        letter-spacing: 0.03;
+        margin-left: 6px;
+    }
+}
+
+.profile__header-desc h2 {
+    text-align: left;
+    color: rgba(22, 24, 35, 1);
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 21px;
+    letter-spacing: 0.03px;
+    white-space: pre-line;
+    margin-top: 10px;
+}
+.profile__header-links {
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 21px;
+    letter-spacing: 0.03px;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    & a,
+    span {
+        color: var(--primary);
+        margin-left: 3px;
+    }
+}
+.btn {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    .share-btn {
+        .share-icon {
+            color: var(--white-color);
+        }
+    }
+    .more-btn {
+        margin-left: 16px;
+        .more-icon {
+            color: black;
+        }
+    }
+}
+.profile__main {
+}
+.profile__main-FeedTab {
+}

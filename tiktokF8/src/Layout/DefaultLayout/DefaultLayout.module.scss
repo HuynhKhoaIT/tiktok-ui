@@ -10,6 +10,16 @@
     display: flex;
     margin-top: var(--default-layout-header-height);
     margin-left: 470px;
+    margin-right: 470px;
+}
+
+.full__sidebar {
+    flex-shrink: 0;
+    width: 232px;
+}
+
+.sidebar-wrapper {
+    width: inherit;
 }
 
 .content {

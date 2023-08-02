@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     max-width: 692px;
-    font-family: 'TiktokFont';
+    font-family: var(--font-family-tiktok);
     padding: 20px 0;
     border-bottom: 1px solid rgba(22, 24, 35, 0.2);
 }
@@ -182,47 +182,55 @@
     background-color: transparent;
     right: 16px;
     z-index: 99;
-}
+    padding: 10px;
+    &:hover .volume__control {
+        display: block;
+    }
+    .volume__control {
+        display: none;
+        position: absolute;
+        left: -9px;
+        bottom: 62px;
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        padding: 0 10px;
+        width: 64px;
+        height: 24px;
+        cursor: initial;
+        background: rgba(22, 24, 35, 0.34);
+        border-radius: 32px;
+    }
+    .volume__control-progess {
+        padding: 0 10px;
+        width: 48px;
+        height: 24px;
+        display: block;
+        position: relative;
+        cursor: initial;
+        border-radius: 32px;
+    }
+    input {
+        -webkit-appearance: none;
+        background-color: #fff;
+        border-radius: 4px;
+        bottom: 11px;
+        height: 2px;
+        position: absolute;
+        right: 5px;
 
-.volume__control {
-    width: 24px;
-    height: 64px;
-    margin-bottom: 6px;
-    display: block;
-    position: relative;
-    cursor: initial;
-    background: rgba(22, 24, 35, 0.34);
-    border-radius: 32px;
-    & .volume__control-circle {
-        position: absolute;
-        bottom: 8px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background-color: var(--white-color);
-    }
-    & .volume__control-progess {
-        width: 2px;
-        height: 50px;
-        background-color: rgba(255, 255, 255, 0.34);
-        position: absolute;
-        top: 8px;
-        bottom: 8px;
-        left: 11px;
-    }
-    & .volume__control-bar {
-        width: 2px;
-        height: 50px;
-        background-color: var(--white-color);
-        position: absolute;
-        top: 8px;
-        bottom: 8px;
-        left: 11px;
+        width: 46px;
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 12px;
+            height: 12px;
+            background-color: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+        }
     }
 }
-
+// video__control-container
 .video__control-container {
     display: flex;
     position: absolute;
@@ -237,36 +245,36 @@
 .seek__bar {
     position: relative;
     width: 100%;
+    input[type='range'] {
+        overflow: hidden;
+        -webkit-appearance: none;
+        height: 2px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.34);
+        position: absolute;
+        left: 0px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+
+    input[type='range']::-webkit-slider-runnable-track {
+        height: 29px;
+        -webkit-appearance: none;
+        color: #13bba4;
+        margin-top: -1px;
+    }
+
+    input[type='range']::-webkit-slider-thumb {
+        width: 4px;
+        -webkit-appearance: none;
+        height: 10px;
+        cursor: ew-resize;
+        background: #fff;
+        box-shadow: -300px 0 0 300px #fff;
+    }
 }
-.seek__bar-progess {
-    height: 4px;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.34);
-    position: absolute;
-    left: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-}
-.seek__bar-circle {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: var(--white-color);
-}
-.seel__bar-bar {
-    height: 4px;
-    width: 80%;
-    background-color: rgb(255, 255, 255);
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    transform-origin: left center;
-}
+
 .seek__bar-time {
     font-size: 1rem;
     margin-left: 8px;
@@ -290,6 +298,8 @@
 }
 
 .icon-colume {
+    width: 22px;
+    height: 22px;
     cursor: pointer;
 }
 

@@ -27,14 +27,18 @@ function VideoItem({ data }) {
     const videoRef = useRef();
     const [isPlaying, setIsPlaying] = useState(false);
     const [isVolume, setIsVolume] = useState(true);
+    const [width, setWidth] = useState(0);
     const [volumes, setVolumes] = useState(0.8);
-    console.log(volumes);
+    const [currentVideo, setCurrentVideo] = useState(null);
 
+    console.log(volumes);
     useEffect(() => {
         videoRef.current.volume = volumes;
     }, [volumes]);
 
-    const handlePlay = () => {
+    const handlePlay = (videoId) => {
+        setCurrentVideo(videoId);
+        console.log(currentVideo);
         if (videoRef.current.paused) {
             videoRef.current.play();
             setIsPlaying(true);
@@ -42,11 +46,13 @@ function VideoItem({ data }) {
             videoRef.current.pause();
             setIsPlaying(false);
         }
+
+        console.log(videoRef.current);
     };
     const handleVolume = () => {
         console.log(videoRef.current.volume);
-        if (isVolume === false) {
-            setVolumes(1);
+        if (isVolume === false || volumes == 0) {
+            setVolumes(0.8);
             setIsVolume(true);
         } else {
             setVolumes(0);
@@ -60,7 +66,24 @@ function VideoItem({ data }) {
             </PopperWapper>
         </div>
     );
+    useEffect(() => {
+        const handleTimeUpdate = () => {
+            setWidth((videoRef.current.currentTime * 100) / videoRef.current.duration);
+        };
 
+        videoRef.current.addEventListener('timeupdate', handleTimeUpdate);
+
+        // return () => {
+        //     videoRef.current.removeEventListener('timeupdate', handleTimeUpdate);
+        // };
+    }, []);
+
+    const handleAdjustVolume = (e) => {
+        if (volumes != 0) {
+            setIsVolume(true);
+        }
+        setVolumes(e.target.value / 100);
+    };
     return (
         <div className={cx('wrapper')}>
             <Tippy interactive delay={[800, 0]} offset={[-10, 0]} render={renderPreview} placement="bottom-start">
@@ -128,11 +151,15 @@ function VideoItem({ data }) {
                             )}
                         >
                             <Image src={data.thumb_url} className={cx('image')} />
-                            <video ref={videoRef} className={cx('video')} loop>
+                            <video key={data.id} ref={videoRef} className={cx('video')} loop>
                                 <source src={data.file_url} />
                             </video>
                         </div>
-                        <div className={cx('btn-play')} onClick={handlePlay}>
+                        <div
+                            className={cx('btn-play')}
+                            // onClick={handlePlay(video.id)}
+                            onClick={() => handlePlay(data.id)}
+                        >
                             {isPlaying === true ? (
                                 <FontAwesomeIcon icon={faPause} />
                             ) : (
@@ -141,12 +168,23 @@ function VideoItem({ data }) {
                         </div>
                         <div className={cx('btn-volume')}>
                             <div className={cx('volume__control')}>
-                                <div className={cx('volume__control-circle')}></div>
-                                <div className={cx('volume__control-progess')}></div>
-                                <div className={cx('volume__control-bar')}></div>
+                                <div className={cx('volume__control-progess')}>
+                                    <input
+                                        className={cx('input-volume')}
+                                        type="range"
+                                        id="vol"
+                                        min="0"
+                                        max="100"
+                                        step="1"
+                                        onChange={handleAdjustVolume}
+                                        value={volumes * 100}
+                                        // value={width}
+                                        // onChange={handleVolumeChange}
+                                    />
+                                </div>
                             </div>
 
-                            {isVolume === false ? (
+                            {isVolume === false || volumes === 0 ? (
                                 <div className={cx('icon-colume')} onClick={handleVolume}>
                                     <FontAwesomeIcon icon={faVolumeXmark} />
                                 </div>
@@ -158,9 +196,14 @@ function VideoItem({ data }) {
                         </div>
                         <div className={cx('video__control-container')}>
                             <div className={cx('seek__bar')}>
-                                <div className={cx('seek__bar-progess')}></div>
-                                <div className={cx('seek__bar-circle')}></div>
-                                <div className={cx('seel__bar-bar')}></div>
+                                <input
+                                    className={cx('input-video')}
+                                    type="range"
+                                    min="0"
+                                    max="100"
+                                    value={width}
+                                    // onChange={handleVolumeChange}
+                                />
                             </div>
                             <div className={cx('seek__bar-time')}>01:07/01:11</div>
                         </div>
